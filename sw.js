@@ -1,5 +1,5 @@
-var CACHE_NAME = 'sample-v5';
-var urlsToCache = ['/index.html', '/menu.html'];
+var CACHE_NAME = 'sample-v6';
+var urlsToCache = ['/index.html', '/menu.html', '/app.js'];
 
 self.addEventListener('install', function(event) {
   event.waitUntil(
