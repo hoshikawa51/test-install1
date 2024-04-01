@@ -10,7 +10,6 @@ function reload() {
       // registration.unregister();  // 効果が疑わしいので保留
       alert('インストール済みの更新があります。アプリを再起動してください。');
       disableUpdateButton();
-      registration.update();
     }
     else {
       registration.update()
@@ -22,7 +21,6 @@ function reload() {
               // registration.unregister();  // 効果が疑わしいので保留
               alert('更新がインストールされました。アプリを再起動してください。');
               disableUpdateButton();
-              registration.update();
             }
           }
         }
