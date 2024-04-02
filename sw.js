@@ -1,4 +1,4 @@
-var CACHE_NAME = 'sample-v3';
+var CACHE_NAME = 'sample-v4';
 var urlsToCache = ['/index.html', '/menu.html', '/app.js'];
 
 self.addEventListener('install', function(event) {
@@ -7,7 +7,11 @@ self.addEventListener('install', function(event) {
       skipWaiting();
       console.log(urlsToCache);
       console.log('をキャッシュします');
-      cache.addAll(urlsToCache);
+      try{
+        cache.addAll(urlsToCache);
+      } catch(e){
+        console.log( e );
+      }
     })
   );
 });
