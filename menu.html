@@ -35,7 +35,7 @@
               if (installingWorker != null) {
                 installingWorker.onstatechange = e => {
                   if (e.target.state == 'installed') {
-                    event.waitUntil(self.skipWaiting());
+                    // event.waitUntil(self.skipWaiting());
                     alert('更新がインストールされました。PWAメニューを再起動してください。');
                   }
                 };
