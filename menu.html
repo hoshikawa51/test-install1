@@ -9,7 +9,7 @@
 </head>
 <body>
   <script src="app.js"></script>
-  <h1>ボタンを選択してください！！１２３４５</h1>
+  <h1>ボタンを選択してください！！あああ</h1>
   <button id="Btn1" type="button" onclick="reload()">
   手動更新
   </button>
@@ -30,11 +30,12 @@
         .then(registration => {
           // 初回登録でなければ更新が見つかったかチェックする
           if (!firstRegistration) {
-            registration.addEventListener('updatefound', () => {
+            registration.addEventListener('updatefound', (event) => {
               const installingWorker = registration.installing;
               if (installingWorker != null) {
                 installingWorker.onstatechange = e => {
                   if (e.target.state == 'installed') {
+                    event.waitUntil(registration.skipWaiting());
                     alert('更新がインストールされました。PWAメニューを再起動してください。');
                   }
                 };
