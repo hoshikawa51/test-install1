@@ -1,10 +1,10 @@
-var CACHE_NAME = 'sample-v6';
+var CACHE_NAME = 'sample-v7';
 var urlsToCache = ['/index.html', '/menu.html', '/app.js'];
 
 self.addEventListener('install', function(event) {
   console.log('install開始');
   event.waitUntil(
-    caches.open(CACHE_NAME).then(function(cache) {
+    caches.open(CACHE_NAME).then(async function(cache) {
       skipWaiting();
       console.log(urlsToCache);
       console.log('をキャッシュします');

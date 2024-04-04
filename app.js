@@ -4,6 +4,7 @@ function reload() {
   if (!('serviceWorker' in navigator))
     return;
 
+  console.log('app_js reload開始');
   navigator.serviceWorker.getRegistration()
   .then(registration => {
     if (registration.waiting != null) {
