@@ -1,7 +1,8 @@
-var CACHE_NAME = 'sample-v2';
+var CACHE_NAME = 'sample-v3';
 var urlsToCache = ['/index.html', '/menu.html', '/app.js'];
 
 self.addEventListener('install', function(event) {
+  console.log('install開始');
   event.waitUntil(
     caches.open(CACHE_NAME).then(async function(cache) {
       skipWaiting();
@@ -18,6 +19,7 @@ self.addEventListener('install', function(event) {
 });
 
 self.addEventListener('activate', function(event) {
+  console.log('activate開始');
   event.waitUntil(
     (function() {
       caches.keys().then(function(oldCacheKeys) {
@@ -37,6 +39,7 @@ self.addEventListener('activate', function(event) {
 });
 
 self.addEventListener('fetch', function(event) {
+  console.log('fetch開始');
   event.respondWith(
     caches.match(event.request).then(function(response) {
       if (response) {
