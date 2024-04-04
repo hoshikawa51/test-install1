@@ -9,7 +9,7 @@
 </head>
 <body>
   <script src="app.js"></script>
-  <h1>ボタンを選択してください！！あ</h1>
+  <h1>ボタンを選択してください！！あい</h1>
   <button id="Btn1" type="button" onclick="reload()">
   手動更新
   </button>
@@ -36,7 +36,7 @@
                 installingWorker.onstatechange = e => {
                   if (e.target.state == 'installed') {
                     alert('更新がインストールされました。PWAメニューを再起動してください。');
-                    // event.waitUntil(self.skipWaiting());
+                    event.waitUntil(self.skipWaiting());
                   }
                 };
               }
