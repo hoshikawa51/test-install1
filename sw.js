@@ -1,4 +1,4 @@
-var CACHE_NAME = 'sample-v1';
+var CACHE_NAME = 'sample-v2';
 var urlsToCache = ['/index.html', '/menu.html', '/app.js'];
 
 self.addEventListener('install', function(event) {
@@ -12,6 +12,7 @@ self.addEventListener('install', function(event) {
       } catch(e){
         console.log( e );
       }
+      return cache;
     })
   );
 });
