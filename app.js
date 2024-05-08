@@ -48,13 +48,11 @@ const ipGet = () => {
     document.head.appendChild(script);
     console.log(window.location.href);
 
-    // window.onload = () => console.log(wm.get(obj));
-    window.onload = () => alert('あいうえお');
-    alert('IP：' + wm.get(obj));
-    
+    window.onload = () => console.log(wm.get(obj));
   }
 
   const ipGet1 = () => {
+    document.getElementById('your_id').innerText = "";
     fetch('https://api.ipify.org?format=json')
     .then(response => {
       if (!response.ok) {
