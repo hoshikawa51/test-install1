@@ -49,11 +49,7 @@ const ipGet = () => {
     console.log(window.location.href);
 
     // window.onload = () => console.log(wm.get(obj));
-    window.onload = function(){
-      document.getElementById('Btn3').onclick = function(){
-        window.alert('ボタン３が押されました');
-      }
-    }
+    window.onload = () => alert('あいうえお');
     alert('IP：' + wm.get(obj));
     
   }
