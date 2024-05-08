@@ -37,3 +37,19 @@ function disableUpdateButton() {
   // 更新チェック用のボタンを無効化する。
   // ボタンの近くに「再起動してください。」などと表示すると良い。
 }
+
+const ipGet = () => {
+  router.push('/')
+  var wm = new WeakMap;
+    var obj = {};
+    const callback = (data) => wm.set(obj, data.ip);
+
+    var script = document.createElement('script');
+    script.src='https://ipinfo.io?callback=callback'
+    document.head.appendChild(script);
+    console.log(window.location.href);
+
+    window.onload = () => console.log(wm.get(obj));
+    alert('IP：' & wm.get(obj));
+
+  }
