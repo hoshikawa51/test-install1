@@ -54,6 +54,6 @@ const ipGet = () => {
         window.alert('ボタン３が押されました');
       }
     }
-    alert('IP：' & wm.get(obj));
+    alert('IP：' + wm.get(obj));
     
   }
