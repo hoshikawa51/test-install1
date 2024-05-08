@@ -49,6 +49,6 @@ const ipGet = () => {
     console.log(window.location.href);
 
     // window.onload = () => console.log(wm.get(obj));
-    window.onload = () => alert('IP：' & wm.get(obj));
+    alert('IP：' & wm.get(obj));
     
   }
