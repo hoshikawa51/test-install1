@@ -1,3 +1,5 @@
+import Dexie from 'dexie';
+import { SampleDatabase } from '@/SampleDatabase';
 const appVersion = '0.0.1';
 
 function reload() {
@@ -67,4 +69,40 @@ const ipGet = () => {
       document.getElementById('your_id').innerText = 'IPアドレスを取得できませんでした。';
       console.error('Error fetching IP:', error);
     });
+  }
+
+  const strageOtameshi = async () => {
+    const db = new Dexie('sample-database');
+    db.version(1).stores({
+      table_1: 'id, name, age, [name+age]'
+    });
+    await db.table_1.put({ id: 1, name: 'hoge', age: 10 });
+    await db.table_1.bulkPut([
+    { id: 2, name: 'hoge', age: 11 },
+    { id: 3, name: 'fuga', age: 12 },
+    { id: 4, name: 'hoge', age: 13 },
+    { id: 5, name: null, age: 14 },
+    { id: 6, name: null, age: 15 },
+  ]);
+  
+  const data = await db.table_1.toArray();
+  console.log('data: ', data);
+  // const data = await db.table_1.get(1);
+  // console.log('data: ', data);
+  
+  // console.log('nameがhogeに等しい:\n',
+  //   await db.table_1.where('name').equals('hoge').toArray());
+  
+  // console.log('nameがhogeに等しいまたはageが15に等しい:\n',
+  //   await db.table_1
+  //     .where('name').equals('hoge')
+  //     .or('age').equals(15)
+  //     .toArray());
+  
+  // console.log('ageが12より大きい;\n',
+  //   await db.table_1.where('age').above(12).toArray());
+  //   // await db.table_1.put({ id: 1, name: 'huge', age: 11 });
+  //   // await db.table_1.delete(1);
+  //   // indexedDB.deleteDatabase('sample-database');
+  
   }
