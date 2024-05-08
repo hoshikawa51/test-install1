@@ -53,3 +53,20 @@ const ipGet = () => {
     alert('IP：' + wm.get(obj));
     
   }
+
+  const ipGet1 = () => {
+    fetch('https://api.ipify.org?format=json')
+    .then(response => {
+      if (!response.ok) {
+        throw new Error('ネットワークの状態が良くないか、サーバーに接続できませんでした。');
+      }
+      return response.json();
+    })
+    .then(data => {
+      document.getElementById('your_id').innerText += data.ip;
+    })
+    .catch(error => {
+      document.getElementById('your_id').innerText = 'IPアドレスを取得できませんでした。';
+      console.error('Error fetching IP:', error);
+    });
+  }
