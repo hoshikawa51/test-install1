@@ -39,7 +39,6 @@ function disableUpdateButton() {
 }
 
 const ipGet = () => {
-  router.push('/')
   var wm = new WeakMap;
     var obj = {};
     const callback = (data) => wm.set(obj, data.ip);
@@ -49,7 +48,7 @@ const ipGet = () => {
     document.head.appendChild(script);
     console.log(window.location.href);
 
-    window.onload = () => console.log(wm.get(obj));
-    alert('IP：' & wm.get(obj));
-
+    // window.onload = () => console.log(wm.get(obj));
+    window.onload = () => alert('IP：' & wm.get(obj));
+    
   }
