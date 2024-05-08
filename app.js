@@ -49,7 +49,8 @@ const ipGet = () => {
     console.log(window.location.href);
 
     // window.onload = () => console.log(wm.get(obj));
-    window.onload = () => alert('あいうえお：');;
+    window.addEventListener = () => console.log(wm.get(obj));
+    window.addEventListener = () => alert('あいうえお：');
     alert('IP：' & wm.get(obj));
     
   }
