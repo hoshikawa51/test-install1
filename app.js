@@ -1,5 +1,3 @@
-import Dexie from 'dexie';
-import { SampleDatabase } from '@/SampleDatabase';
 const appVersion = '0.0.1';
 
 function reload() {
